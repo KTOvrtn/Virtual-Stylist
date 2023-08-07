@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+/* =============================== NavBar =============================== */
+/*     <nav class="navbar">
+        <div class="navbar__columns">
+            <img src="{{ url_for('static', filename='images/Bird.jpg') }}" alt="Logo" class="navbar__logo">
+            <div class="navbar__rightside">
+                <ul class="navbar__ul">
+                    <li class="navbar__li">
+                        <a href="/" class="navbar__buttons">Login</a>
+                    </li>
+                    <li class="navbar__li">
+                        <a href="/" class="navbar__buttons">Sign-up</a>
+                    </li>
+                    <li class="navbar__li">
+                        <span class="navbar__hamburger"></span>
+                        <span class="navbar__hamburger"></span>
+                        <span class="navbar__hamburger"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> */
+.navbar{
+    background-color: #BFD0E0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+}
+
+.navbar__columns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar__logo{
+    height: 50px;
+    padding-left: 20px;
+    width: 50px;
+}
+
+.navbar__rightside{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.navbar__ul{
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: right;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.navbar__li{
+    list-style: none;
+    display: inline-block;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar__buttons{
+    text-decoration: none;
+    width: 70px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px;
+    text-align: center;
+    line-height: 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar__buttons:hover{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.navbar__burgers{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__hamburger{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #000000;
+
+}

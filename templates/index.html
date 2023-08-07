@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Stylista</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__columns">
+            <img src="{{ url_for('static', filename='images/Bird.jpg') }}" alt="Logo" class="navbar__logo">
+            <div class="navbar__rightside">
+                <ul class="navbar__ul">
+                    <li class="navbar__li">
+                        <a href="/" class="navbar__buttons">Login</a>
+                    </li>
+                    <li class="navbar__li">
+                        <a href="/" class="navbar__buttons">Sign-up</a>
+                    </li>
+                    <li class="navbar__li navbar__burgers">
+                        <span class="navbar__hamburger"></span>
+                        <span class="navbar__hamburger"></span>
+                        <span class="navbar__hamburger"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
