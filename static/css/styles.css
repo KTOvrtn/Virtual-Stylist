@@ -104,3 +104,10 @@
     background-color: #000000;
 
 }
+
+
+.hero{
+    background-image: url(/static/images/hero_background.svg);
+    text-align: center;
+    height: 100vh;
+}
