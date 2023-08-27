@@ -5,28 +5,9 @@
     font-family: 'Poppins', sans-serif;
   }
 /* =============================== NavBar =============================== */
-/*     <nav class="navbar">
-        <div class="navbar__columns">
-            <img src="{{ url_for('static', filename='images/Bird.jpg') }}" alt="Logo" class="navbar__logo">
-            <div class="navbar__rightside">
-                <ul class="navbar__ul">
-                    <li class="navbar__li">
-                        <a href="/" class="navbar__buttons">Login</a>
-                    </li>
-                    <li class="navbar__li">
-                        <a href="/" class="navbar__buttons">Sign-up</a>
-                    </li>
-                    <li class="navbar__li">
-                        <span class="navbar__hamburger"></span>
-                        <span class="navbar__hamburger"></span>
-                        <span class="navbar__hamburger"></span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> */
+
 .navbar{
-    background-color: #BFD0E0;
+    background-color: #f2f6fd;
     width: 100%;
     height: 60px;
     z-index: 1000;
@@ -105,9 +86,16 @@
 
 }
 
+/* =============================== hero section / main page =============================== */
+
+.main{
+    height: 250vh;
+}
 
 .hero{
-    background-image: url(/static/images/hero_background.svg);
+    background-image: url(/static/images/cloud_background.jpg); /*https://www.pexels.com/photo/gray-surface-3255761/*/
     text-align: center;
     height: 100vh;
 }
+
+/* =============================== Quiz page =============================== */

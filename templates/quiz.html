@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Quiz</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li class="flash-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}  
+    <div class="container">
+        <form method="post" action="/quiz">
+            <h1> Style quiz </h1>
+            <h2> What is your preferred aesthetic? </h2>
+            <div class="form-group">
+                <select class="form-control" id="aesthetic" name="aesthetic">
+                    <option value="Vsco Girl">Vsco Girl</option>
+                    <option value="E-boy">E-boy</option>
+                    <option value="Cottagecore">Cottagecore</option>
+                    <option value="Preppy">Preppy</option>
+                    <option value="Streetwear">Streetwear</option>
+                </select>
+            </div>
+            <h2>How would you describe your body-type?</h2>
+            <div class="form-group">
+                <select class="form-control" id="body_type" name="body_type">
+                    <option value="Ectomorph">Ectomorph</option>
+                    <option value="Mesomorph">Mesomorph</option>
+                    <option value="Endomorph">Endomorph</option>
+                </select>
+            </div>
+            <h2>What combination do you wear the most?</h2>
+            <div class="form-group">
+                <select class="form-control" id="combination" name="combination">
+                    <option value="T-shirt and trousers">T-shirt and Trousers</option>
+                    <option value="Dress and Heels">Dress and Heels</option>
+                    <option value="T-shirt and Skirt">T-shirt and Skirt</option>
+                </select>
+            </div>
+            <h2>What is your favorite color?</h2>
+            <div class="form-group">
+                <select class="form-control" id="color" name="color">
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Black">Black</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Brown">Brown</option>
+                </select>
+            </div>
+            <h2>What is your favorite colour to wear?</h2>
+            <div class="form-group">
+                <select class="form-control" id="colour" name="colour">
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Black">Black</option>
+                    <option value="Pink">Pink</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Purple">Purple</option>
+                    <option value="Brown">Brown</option>
+                </select>
+            </div>
+            <h2>Would you like the virtual stylist to take into account your answers to the quiz or generate new outfits outside your comfort zone?</h2>
+            <div class="form-group">
+                <select class="form-control" id="comfort" name="comfort">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+</html>
