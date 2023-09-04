@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar__columns">
-            <img src="{{ url_for('static', filename='images/Bird.jpg') }}" alt="Logo" class="navbar__logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar__logo">
             <div class="navbar__rightside">
                 <ul class="navbar__ul">
                     <li class="navbar__li">
@@ -29,7 +29,32 @@
     </nav>
     <div class="main">
         <div class="hero">
-            <a href="/quiz" class="quiz_button">Take the quiz</a>
+            <a href="/quiz" class="quiz_button">Take the quiz!</a>
+        </div>
+        <div class="about_section">
+            <div class="about_section_container">
+                <h1 class="about_section_header">About</h1>
+                <p class="about_section_explanation">Stilista is a virtual stylist which takes into account your personality and clothing to generate outfits for an occasion. Just take a picture of all your items of clothing, upload them to your own virtual wardrobe, enter a prompt and the rest will be done for you! </p>
+            </div>
+            <div class="about_section_images">
+                <img src="{{ url_for('static', filename='images/wardrobe.png') }}" class="about_section_image_1" alt="Wardrobe" border="5">
+                <img src="{{ url_for('static', filename='images/folded_clothing.jpg') }}" class="about_section_image_2" alt="clothing" border="5">
+                <img src="{{ url_for('static', filename='images/possible_outfit.jpg') }}" class="about_section_image_3" alt="outfit" border="5">
+            </div>
+        </div>
+        <div class="contact_and_legal_section">
+            <div class="contact_and_legal_section_container">
+                <h1 class="contact_and_legal_section_header">Contact</h1>
+                <p class="contact_and_legal_section_explanation">If you have any questions or concerns, please email: </p>
+                <div class="email_container">
+                    <div style="float: left">
+                        <img src="{{ url_for('static', filename='images/email.svg') }}" class="email" alt="email">
+                    </div>
+                    <div class="my_email">
+                        17overtonk@student.cleeveschool.net
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

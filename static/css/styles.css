@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,10 +9,11 @@
 /* =============================== NavBar =============================== */
 
 .navbar{
-    background-color: #f2f6fd;
+    background-color: #b2ccd8;
     width: 100%;
-    height: 60px;
-    z-index: 1000;
+    height: 50px;
+    z-index: 10;
+    
 }
 
 .navbar__columns{
@@ -22,9 +25,9 @@
 }
 
 .navbar__logo{
-    height: 50px;
+    height: 45px;
     padding-left: 20px;
-    width: 50px;
+    width: 70px;
 }
 
 .navbar__rightside{
@@ -32,50 +35,54 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 2px;
 }
 
 .navbar__ul{
     flex-direction: row;
     display: flex;
-    gap: 10px;
+    gap: 0.1px;
     width: 100%;
     align-items: right;
     justify-content: right;
-    padding-right: 20px;
+    padding-right: 2px;
 }
 
 .navbar__li{
     list-style: none;
     display: inline-block;
     padding-right: 20px;
-    padding-top: 10px;
+    padding-top: 17.5px;
     padding-bottom: 10px;
 }
 
 .navbar__buttons{
     text-decoration: none;
     width: 70px;
-    height: 50px;
+    height: 60px;
     border-radius: 5px;
-    background-color: #F2F2F2;
-    color: #000000;
+    background-color: #b2ccd8;
+    color: #44487f;
     font-size: 15px;
     font-weight: 500;
     padding: 5px;
     text-align: center;
     line-height: 30px;
     transition: all 0.3s ease;
+    border: 1px #44487f solid;
 }
 
 .navbar__buttons:hover{
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: #44487f;
+    color: #b2ccd8;
 }
 
 .navbar__burgers{
     display: flex;
     flex-direction: column;
+    padding-left: 6px;
+    margin-bottom: 5px;
+    color: white;
 }
 
 .navbar__hamburger{
@@ -83,19 +90,196 @@
     height: 3px;
     margin: 5px auto;
     background-color: #000000;
+    margin-bottom: 2px;
 
 }
 
 /* =============================== hero section / main page =============================== */
 
 .main{
-    height: 250vh;
+    height: 220vh;
 }
 
 .hero{
     background-image: url(/static/images/cloud_background.jpg); /*https://www.pexels.com/photo/gray-surface-3255761/*/
     text-align: center;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.quiz_button{
+    background-color: #b2ccd8;
+    text-decoration: none;
+    margin-top: 150px;
+    height: 40px;
+    width: 110px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+    border: 1px #44487f solid;
+    color: #44487f; 
+    transition: all 0.3s ease;
+}
+
+.quiz_button:hover{
+    background-color: #44487f;
+    color: #b2ccd8;
+}
+
+.about_section{
     height: 100vh;
+    width: 100%;
+    display: flex;
+    background-image: url(/static/images/about_background.jpg);
+    border-top: 4px #dcdef4 solid;
+}
+
+.about_section_container{
+    position: relative;
+    width: 60%;
+    margin-top: 15px;
+    padding-left: 35px;
+    padding-right: 30px;
+}
+
+.about_section_header{
+    font-family: Lobster;
+    font-weight: 800;
+    font-size: 52px;
+    text-align: center;
+    color: #2a2e59;
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+
+.about_section_explanation{
+    font-weight: 600;
+    text-align: left;
+    color: #2a2e59;
+}
+
+.about_section_images{
+    width: 50%;
+    margin-top: 25px;
+    padding-left: 70px;
+    padding-right: 40px;
+}
+
+.about_section_image_1{
+    height: 200px;
+    width: 350px;
+    z-index: 1;
+    position: relative;
+    border: 5px white solid;
+}
+
+.about_section_image_2{
+    height: 200px;
+    width: 350px;
+    margin-left: 150px;
+    z-index: 2;
+    position: relative;
+    top: -40px;
+    left: -10px;
+    border: 5px white solid;
+}
+
+.about_section_image_3{
+    height: 250px;
+    width: 150px;
+    z-index: 3;
+    position: relative;
+    top: -110px;
+    border: 5px white solid;
+}
+
+.contact_and_legal_section{
+    background: rgb(124,144,163);
+    background: radial-gradient(circle, rgba(124,144,163,1) 15%, rgba(49,77,117,1) 100%);
+    height: 30vh;
+    z-index: 5;
+    border-top: 2px #132537 solid;
+    box-shadow: 0px 0px 5px 5px #132537;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.email{
+    height: 30px;
+    width: 40px;
+    padding-top: 5px;
+}
+
+.my_email{
+    padding: 8px;
 }
 
 /* =============================== Quiz page =============================== */
+
+.container{
+    background-color: #abdae1;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.quiz_form{
+    background-color: #f1f8fb;
+    height: 94.5%;
+    width: 97.5%;
+    border-radius: 9px;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.quiz_header{
+    text-align: center;
+    font-family: Lobster;
+    font-weight: 800;
+    font-size: 52px;
+    color: #9bd3ec;
+}
+
+.quiz_explanation{
+    margin-top: 5px;
+    font-weight: 600;
+    color: #6d6466;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.question_title{
+    color:#47545d;
+}
+
+.form-group{
+    padding-bottom: 8.5px;
+}
+.form-control{
+    background-color: #9bd3ec;
+}
+
+.quiz_form button{
+    width: 6%;
+    height: 7%;
+    background-color: #9bd3ec; 
+    color: #063a51;
+    margin-left: 47%;
+    margin-right: 47%;
+    border: 1px #063a51 solid;
+    border-radius: 7px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.quiz_form button:hover{
+    border: 1px #9bd3ec solid;
+    background-color: #063a51;
+    color: #9bd3ec;
+    transform: scale(1.1);
+    
+}
