@@ -17,10 +17,11 @@ def quiz():
         answer4 = request.form["color"]
         answer5 = request.form["colour"]
         answer6 = request.form["comfort"]
-        add_quiz_results(session["username"], answer1, answer2, answer3, answer4, answer5, answer6)
-        print(answer1, answer2, answer3, answer4, answer5, answer6)
-        flash('Your answers have been submitted!')
-        return render_template('quiz.html')
+        if get_quiz_results(session["username"]) != False:
+            override_quiz_results(answer1, answer2, answer3, answer4, answer5, answer6, session["username"])
+        else:
+            add_quiz_results(session["username"], answer1, answer2, answer3, answer4, answer5, answer6)
+        return redirect(url_for('index'))
     else:
         if "username" in session:
             return render_template('quiz.html')
@@ -39,10 +40,34 @@ def login():
         else:
             flash("Successful login!")
             session["username"] = username
-            return render_template('index.html')
+            return redirect(url_for('index'))
     else:
         return render_template("login.html")
-
+    
+@app.route('/signup', methods=['GET', 'POST'])#
+def signup():
+    if request.method == "POST":
+        username = request.form["username"]
+        email = request.form["email"]
+        password = request.form["password"]
+        re_enter_password = request.form["re-enter_password"]
+        if password != re_enter_password:
+            flash("Your password doesn't match, please try again!")
+            return render_template("signup.html")
+        if check_username(username):
+            flash("This username already exists, please try again!")
+            return render_template("signup.html")
+        if check_email(email):
+            flash("This email already exists, please try again!")
+            return render_template("signup.html")
+        if check_password(password) != True:
+            flash(check_password(password))
+            return render_template("signup.html")
+        add_user(username, email,  password)
+        return redirect(url_for('login'))
+    else:
+        return render_template("signup.html")
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
