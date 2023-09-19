@@ -283,3 +283,81 @@
     transform: scale(1.1);
     
 }
+
+/* =============================== Signup page =============================== */
+
+.signup_container{
+    background-color: #063a51;
+    height: 110vh;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.signup_form{
+    background-color: #9bd3ec;
+    margin-left: 475px;
+    margin-bottom: 50px;
+    height: 350px;
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+}
+
+.signup_header{
+    margin-left: 95px;
+    margin-bottom: 20px;
+}
+
+.signup_input_container{
+    padding-bottom: 10px;
+}
+
+.signup_button{
+    margin-left: 120px;
+    margin-top: 100px;
+    height: 30px;
+    width: 60px;
+}
+
+/* =============================== login page =============================== */
+
+.login_container{
+    background-color: #063a51;
+    height: 110vh;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.login_form{
+    background-color: #9bd3ec;
+    margin-left: 475px;
+    margin-bottom: 50px;
+    height: 350px;
+    border-radius: 9px;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-bottom: 10px;
+    padding-right: 8px;
+}
+
+.login_header{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.login_input_container{
+    padding-bottom: 10px;
+}
+
+.login_button{
+    margin-left: 90px;
+    margin-top: 100px;
+    height: 30px;
+    width: 60px;
+}

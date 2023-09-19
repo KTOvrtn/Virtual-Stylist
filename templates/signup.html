@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Signup</title>
 </head>
-<body>
+<body class="signup_body" scroll="no" style="overflow: hidden">
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul class="flash-messages">
@@ -20,19 +20,19 @@
         <form method="POST" action="" class="signup_form">
             <h1 class="signup_header">Signup</h1>
             <div class="signup_input_container">
-                <label for="username" class="signup_label">Username</label>
+                <label for="username" class="signup_label">Username:</label>
                 <input type="text" name="username" id="username" class="signup_input" required>
             </div>
              <div class="signup_input_container">
-                <label for="email" class="signup_label">Email</label>
+                <label for="email" class="signup_label">Email:</label>
                 <input type="email" name="email" id="email" class="signup_input" required>
             </div>
-            <div class="sign_input_container">
-                <label for="password" class="sign_label">Password</label>
+            <div class="signup_input_container">
+                <label for="password" class="sign_label">Password:</label>
                 <input type="password" name="password" id="password" class="signup_input" required>
             </div>
-            <div class="sign_input_container">
-                <label for="re-enter_password" class="sign_label">Re-enter password</label>
+            <div class="signup_input_container">
+                <label for="re-enter_password" class="sign_label">Re-enter password:</label>
                 <input type="password" name="re-enter_password" id="re-enter_password" class="signup_input" required>
             </div>
             <div class="signup_input_container">
