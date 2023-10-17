@@ -101,8 +101,40 @@ def override_quiz_results(username, answer1, answer2, answer3, answer4, answer5,
     connection.commit()
     connection.close()
 
+def create_image_table():
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("CREATE TABLE IF NOT EXISTS images (image_id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT,item TEXT,colour TEXT)")
+    connection.commit()
+    connection.close()
+
+def add_image(username, item, colour):
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("INSERT INTO images (username, item, colour) VALUES (?, ?, ?)",(username, item, colour))
+    connection.commit()
+    connection.close()
+
+def get_images(username):
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM images WHERE username=?",(username,))
+    images = cursor.fetchall()
+    connection.close()
+    if images:
+        return images
+    else:
+        return False
+
+def get_image_amount():
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT COUNT(*) FROM images")
+    image_amount = cursor.fetchall()
+    connection.close()
+    return image_amount[0][0]
 
 
 create_quiz_table()
 create_user_table()
-
+create_image_table()

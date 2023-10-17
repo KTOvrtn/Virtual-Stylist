@@ -26,8 +26,10 @@
 
 .navbar__logo{
     height: 45px;
-    padding-left: 20px;
-    width: 70px;
+    margin-left: 20px;
+    width: 45px;
+    margin-top: 4px;
+    border-radius: 50%;
 }
 
 .navbar__rightside{
@@ -89,7 +91,7 @@
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: #000000;
+    background-color: #44487f;
     margin-bottom: 2px;
 
 }
@@ -323,6 +325,7 @@
     width: 60px;
 }
 
+
 /* =============================== login page =============================== */
 
 .login_container{
@@ -360,4 +363,104 @@
     margin-top: 100px;
     height: 30px;
     width: 60px;
+}
+
+/* =============================== wardrobe page =============================== */
+
+.wardrobe_container{
+    background-color: #b2ccd8;
+    height: 92vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.inner_wardrobe_container{
+    background-color: #d1dadf;
+    height: 88vh;
+    width: 206vh;
+    border-radius: 9px;
+    display: flex;
+    padding-left: 0.25%;
+}
+.upload_container{
+    width: 60%;
+    height: 98%;
+    background-color: #678497;
+    margin-left: 5px;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 9px;
+    
+}
+
+.generate_outfit{
+    height: 98%;
+    width: 38%;
+    margin-top: 0.4%;
+    margin-left: 0.8%;
+    z-index: 3;
+    background-color: #678497;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 9px;
+    flex-direction: column;
+
+}
+
+.prompt_form{
+    margin-top: 5%;
+    color: #e3e8ff;
+}
+
+.prompt_input{
+    width: 245px;
+}
+
+.outfit_output{
+    background-color: #d1dadf;
+    height: 70%;
+    width: 90%;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    border-radius: 9px;
+}
+.wardrobe{
+    height: 75%;
+    width: 95%;
+    border-radius: 9px,9px,0px,0px;
+}
+
+.wardrobe_img{
+    height: 98%;
+    width: 100%;
+}
+
+
+.photo_upload_container{
+    height: 20%;
+    width: 95%;
+    background-color: #d1dadf;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 0px,0px,9px,9px;
+}
+
+.generate_button{
+    background-color: #b2ccd8;
+    color: #44487f;
+    text-decoration: none;
+    height: 10%;
+    width: 40%;
+    margin: 10%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 500px;
+    position: relative;
 }

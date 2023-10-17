@@ -26,10 +26,9 @@ import numpy as np
 
   
 
-def main_colour_in_image():
+def main_colour_in_image(image):
     NUM_CLUSTERS = 5
-    remove_background()
-    im = Image.open('new_img.png')
+    im = Image.open(image)
     im = im.resize((150, 150))      
     ar = np.asarray(im)
     shape = ar.shape
@@ -44,15 +43,26 @@ def main_colour_in_image():
     index_max = np.argmax(counts)                    
     peak = codes[index_max]
     colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-    print('most frequent is %s (#%s)' % (peak, colour))
+    if colour == "dffd00":
+        index_max = np.argsort(counts)[-2]
+        peak = codes[index_max]
+        colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
+    if len(colour) != 6:
+        colour = colour[:6]
+    return colour
 
-
-def remove_background(): #https://www.geeksforgeeks.org/how-to-remove-the-background-from-an-image-using-python/
-    input_path =  'static/images/sample.jpg'
-    output_path = 'new_img.png'
-    input = Image.open(input_path)
+def remove_background(image): #https://www.geeksforgeeks.org/how-to-remove-the-background-from-an-image-using-python/
+    input = Image.open(image)
     output = remove(input)
-    output.save(output_path)
+    return output
 
 def image_classification():
     pass
+
+def combine_images(image):
+    # https://www.codespeedy.com/merge-two-images-in-python/
+    # https://www.bing.com/search?pglt=41&q=how+to+combine+two+images+in+python&cvid=382a44a6da6e42049e0f637c73ab3c9a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIECAUQADIECAYQADIECAcQADIECAgQANIBCTI4NzU0ajBqMagCALACAA&FORM=ANNTA1&PC=LCTS
+    background = Image.open('static/images/colour_comparison.jpg')
+    foreground = Image.open(image)
+    background.paste(foreground, (0, 0), foreground)
+    return background
