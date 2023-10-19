@@ -77,6 +77,7 @@ def wardrobe():
 @app.route('/upload_file', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
+        clothing_type = request.form["clothing_type"]
         image = request.files['upload']
         accepted_extensions = ["png", "jpg", "jpeg", "bmap", "svg"]
         if image.filename.split(".")[-1] not in accepted_extensions:
@@ -85,10 +86,9 @@ def upload_file():
         image = remove_background(image)
         image_withBG = combine_images(image)
         colour = main_colour_in_image(image_withBG)
-        item = check_item(image)
         itemnumber = get_image_amount()
         image.save("static/uploaded_images/" + str(itemnumber) + ".png")
-        add_image(session["username"], item, colour)
+        add_image(session["username"], clothing_type, colour)
 
         
 

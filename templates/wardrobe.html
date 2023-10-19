@@ -34,10 +34,21 @@
                     <img src="{{ url_for('static', filename='images/possible_wardrobe.jpg') }}" alt="wardrobe_img" class="wardrobe_img">
                 </div>
                 <div class="photo_upload_container">
-                    <form method="POST" action="{{url_for('upload_file')}}" class="upload_form">
+                    <form method="POST" action="{{url_for('upload_file')}}" class="upload_form" enctype="multipart/form-data">
                         <div class="upload">
                             <label for="upload" class="upload_label">Upload: </label>
-                            <input type="file" name="upload" id="upload" class="upload_input">
+                            <input type="file" name="upload" id="upload" required class="upload_input">
+                            <select name="clothing_type" required>
+                                <option value="T-shirt">T-shirt</option>
+                                <option value="Jacket">Jacket</option>
+                                <option value="Hoodie">Hoodie</option>
+                                <option value="Trousers">Trousers</option>
+                                <option value="Shorts">Shorts</option>
+                                <option value="Skirt">Skirt</option>
+                                <option value="Dress">Dress</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <input type="submit">
                         </div>
                     </form>
                 </div>   

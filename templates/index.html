@@ -26,7 +26,17 @@
                 </ul>
             </div>
         </div>
+    </nav class="hamburger_menu_active">
+        <div class="right_side_popup">
+            <img scr="{{ url_for('static', filename='images/close.jpg') }}">
+            <ul id="ul_popup">
+                <li id="li_popup"><a class="li_a" href="/wardrobe">Wardrobe</a></li>
+                <li id="li_popup"><a class="li_a" href="/quiz">Quiz</a></li>
+                <li id="li_popup"><a class="li_a" href="/">Settings</a></li>
+            </ul>
+        </div>
     </nav>
+
     <div class="main">
         <div class="hero">
             <a href="/quiz" class="quiz_button">Take the quiz!</a>
@@ -58,4 +68,9 @@
         </div>
     </div>
 </body>
+<script>
+    document.querySelector('.navbar__burgers').addEventListener('click', () => {
+        document.querySelector('.hamburger_menu_active').classList.toggle('active');
+    });
+</script>
 </html>

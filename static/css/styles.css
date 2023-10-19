@@ -96,6 +96,37 @@
 
 }
 
+.right_side_popup{
+    z-index: 100;
+    position: absolute;
+    background-color: #44487f;
+    opacity: 70%;
+    height: 21%;
+    width: 18%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    right: 0;
+}
+
+#ul_popup{
+    list-style: none;
+}
+
+#li_popup{
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+
+.li_a{
+    text-decoration: none;
+    color: #b2ccd8;
+}
+
+.active{
+    display: hidden;
+}
+
 /* =============================== hero section / main page =============================== */
 
 .main{

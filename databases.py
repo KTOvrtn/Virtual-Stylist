@@ -61,7 +61,7 @@ def check_password(password):
     if not (any(x.isupper() for x in password)):
         return ("Your password must contain a capital letter!")
     if not(any(x.isdigit() for x in password)):
-        return ("Your password must container a number!")
+        return ("Your password must contain a number!")
     # https://www.geeksforgeeks.org/python-program-check-string-contains-special-character/
     special_characters = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
     if (special_characters.search(password) == None):

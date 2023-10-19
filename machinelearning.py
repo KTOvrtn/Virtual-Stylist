@@ -7,20 +7,12 @@
 
 from __future__ import print_function
 import binascii
-from PIL import Image
+import PIL.Image
 import numpy as np
 import scipy
 import scipy.misc
 import scipy.cluster
 from rembg import remove
-from PIL import Image
-import torch
-from torch import nn
-import torch.nn.functional as F
-import torchvision
-from torchvision import datasets, transforms
-import torch.optim as optim
-import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -28,7 +20,7 @@ import numpy as np
 
 def main_colour_in_image(image):
     NUM_CLUSTERS = 5
-    im = Image.open(image)
+    im = PIL.Image.open(image)
     im = im.resize((150, 150))      
     ar = np.asarray(im)
     shape = ar.shape
@@ -52,17 +44,14 @@ def main_colour_in_image(image):
     return colour
 
 def remove_background(image): #https://www.geeksforgeeks.org/how-to-remove-the-background-from-an-image-using-python/
-    input = Image.open(image)
+    input = PIL.Image.open(image)
     output = remove(input)
     return output
-
-def image_classification():
-    pass
 
 def combine_images(image):
     # https://www.codespeedy.com/merge-two-images-in-python/
     # https://www.bing.com/search?pglt=41&q=how+to+combine+two+images+in+python&cvid=382a44a6da6e42049e0f637c73ab3c9a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIECAUQADIECAYQADIECAcQADIECAgQANIBCTI4NzU0ajBqMagCALACAA&FORM=ANNTA1&PC=LCTS
-    background = Image.open('static/images/colour_comparison.jpg')
-    foreground = Image.open(image)
+    background = PIL.Image.open('static/images/colour_comparison.jpg')
+    foreground = PIL.Image.open(image)
     background.paste(foreground, (0, 0), foreground)
     return background
