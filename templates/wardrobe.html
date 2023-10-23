@@ -32,6 +32,27 @@
             <div class="upload_container">
                 <div class="wardrobe">
                     <img src="{{ url_for('static', filename='images/possible_wardrobe.jpg') }}" alt="wardrobe_img" class="wardrobe_img">
+                    <div class="jacket_overlay">
+                        <a href="/signup" class="jacket_overlay_button"></a>
+                    </div>
+                    <div class="dress_overlay">
+                        <a href="/signup" class="dress_overlay_button"></a>
+                    </div>
+                    <div class="hoodie_overlay">
+                        <a href="/signup" class="hoodie_overlay_button"></a>
+                    </div>
+                    <div class="trouser_overlay">
+                        <a href="/signup" class="trouser_overlay_button"></a>
+                    </div>
+                    <div class="shorts_overlay">
+                        <a href="/signup" class="short_overlay_button"></a>
+                    </div>
+                    <div class="skirt_overlay">
+                        <a href="/signup" class="skirt_overlay_button"></a>
+                    </div>
+                    <div class="other_overlay">
+                        <a href="/signup" class="other_overlay_button"></a>
+                    </div>
                 </div>
                 <div class="photo_upload_container">
                     <form method="POST" action="{{url_for('upload_file')}}" class="upload_form" enctype="multipart/form-data">

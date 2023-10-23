@@ -123,8 +123,8 @@
     color: #b2ccd8;
 }
 
-.active{
-    display: hidden;
+.hidden{
+    display: none;
 }
 
 /* =============================== hero section / main page =============================== */
@@ -494,4 +494,137 @@
     display: flex;
     border-radius: 500px;
     position: relative;
+}
+
+.jacket_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 49.6%;
+    width: 9.8%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 9.8%;
+    margin-left: 32%;
+    transition: all 0.3s ease;
+}
+
+.jacket_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.dress_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 49.6%;
+    width: 9.8%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 9.8%;
+    margin-left: 41.7%;
+    transition: all 0.3s ease;
+}
+
+.dress_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.hoodie_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 33.2%;
+    width: 9.8%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 9.8%;
+    margin-left: 22.4%;
+    transition: all 0.3s ease;
+}
+
+.hoodie_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.trouser_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 16.3%;
+    width: 9.8%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 25.6%;
+    margin-left: 22.4%;
+    transition: all 0.3s ease;
+}
+
+.trouser_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.short_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 8%;
+    width: 18.2%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 29.6%;
+    margin-left: 4.3%;
+    transition: all 0.3s ease;
+}
+
+.short_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.skirt_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 4.6%;
+    width: 18.2%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 27.3%;
+    margin-left: 4.3%;
+    transition: all 0.3s ease;
+}
+
+.skirt_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
+}
+
+.other_overlay_button{
+    /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
+    height: 37.3%;
+    width: 18.2%;
+    background-color: transparent;
+    position: absolute;
+    top: 0px; 
+    z-index: 3;
+    margin-top: 9.6%;
+    margin-left: 4.3%;
+    transition: all 0.3s ease;
+}
+
+.other_overlay_button:hover{
+    background-color: #edf96a;
+    opacity: 50%;
+
 }

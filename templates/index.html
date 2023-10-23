@@ -26,7 +26,8 @@
                 </ul>
             </div>
         </div>
-    </nav class="hamburger_menu_active">
+    </nav>
+    <nav class="hamburger_menu_active hidden">
         <div class="right_side_popup">
             <img scr="{{ url_for('static', filename='images/close.jpg') }}">
             <ul id="ul_popup">
@@ -70,7 +71,7 @@
 </body>
 <script>
     document.querySelector('.navbar__burgers').addEventListener('click', () => {
-        document.querySelector('.hamburger_menu_active').classList.toggle('active');
+        document.querySelector('.hamburger_menu_active').classList.toggle('hidden');
     });
 </script>
 </html>
