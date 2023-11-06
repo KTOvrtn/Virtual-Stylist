@@ -70,9 +70,31 @@ def signup():
     else:
         return render_template("signup.html")
     
+@app.route('/items/<clothing_type>', methods=['GET', 'POST'])
+def items_viewer(clothing_type):
+    if "username" in session:
+        items = query_images(session["username"], clothing_type)
+        listofnumbers = []
+        for item in items:
+            listofnumbers.append(str(item[0]))
+
+        if items != "[]":
+            return render_template("wardrobe.html", items=listofnumbers, show_popup = True)
+        else:
+            return render_template("wardrobe.html", items="No items found", show_popup = False)
+    else:
+        flash("You need to login first!")
+        return redirect(url_for('login'))
+   
+    
 @app.route('/wardrobe' , methods=['GET', 'POST'])
 def wardrobe():
-    return render_template('wardrobe.html')
+    if "username" in session:
+        return render_template("wardrobe.html", show_popup = False)
+    else:
+        flash("You need to login first!")
+        return redirect(url_for('login'))
+
 
 @app.route('/upload_file', methods=['GET', 'POST'])
 def upload_file():
@@ -83,15 +105,14 @@ def upload_file():
         if image.filename.split(".")[-1] not in accepted_extensions:
             flash("This file format is not supported, please try again!")
             return render_template("wardrobe.html")
-        image = remove_background(image)
-        image_withBG = combine_images(image)
-        colour = main_colour_in_image(image_withBG)
         itemnumber = get_image_amount()
-        image.save("static/uploaded_images/" + str(itemnumber) + ".png")
+        remove_background(image, itemnumber)
+        combine_images()
+        colour = main_colour_in_image("static/uploaded_images/temporaryimages/mergedimage.png")
         add_image(session["username"], clothing_type, colour)
 
-        
-
+    flash("Upload Success")
+    return render_template('wardrobe.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

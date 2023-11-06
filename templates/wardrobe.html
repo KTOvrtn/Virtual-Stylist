@@ -7,6 +7,25 @@
     <title>Virtual wardrobe</title>
 </head>
 <body>
+    {% if show_popup %}
+        <div class="image_popup">
+            <div class="inner_image_popup">
+                <div class="top_popup">
+                    <h1 class="popup_title">placeholder </h1>
+                    <a id="close"><img src="{{ url_for('static', filename='images/xmark-solid.svg') }}" alt="Logo" class="close"></a>
+                </div>
+                <div class="images">
+                    {% if items == "No items found" %}
+                        <p>No items were found in the database</p>
+                    {% else %}
+                        {% for item in items %}
+                        <img class="individual_images" src="{{ url_for('static', filename='uploaded_images/'+ item+'.png')}}">
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
     <nav class="navbar">
         <div class="navbar__columns">
             <a href = "/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar__logo"></a>
@@ -27,31 +46,55 @@
             </div>
         </div>
     </nav>
+    <nav class="hamburger_menu_active hidden">
+        <div class="right_side_popup">
+            <img scr="{{ url_for('static', filename='images/close.jpg') }}">
+            <ul id="ul_popup">
+                <li id="li_popup"><a class="li_a" href="/wardrobe">Wardrobe</a></li>
+                <li id="li_popup"><a class="li_a" href="/quiz">Quiz</a></li>
+                <li id="li_popup"><a class="li_a" href="/">Settings</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="wardrobe_container">
         <div class="inner_wardrobe_container">
             <div class="upload_container">
                 <div class="wardrobe">
                     <img src="{{ url_for('static', filename='images/possible_wardrobe.jpg') }}" alt="wardrobe_img" class="wardrobe_img">
                     <div class="jacket_overlay">
-                        <a href="/signup" class="jacket_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Jacket') }}" method="POST">
+                            <button type="submit" class="jacket_overlay_button" title="Jackets"></button>
+                        </form>
                     </div>
                     <div class="dress_overlay">
-                        <a href="/signup" class="dress_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Dress') }}" method="POST">
+                            <button type="submit" class="dress_overlay_button" title="Dress"></button>
+                        </form>
                     </div>
                     <div class="hoodie_overlay">
-                        <a href="/signup" class="hoodie_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Hoodie') }}" method="POST">
+                            <button type="submit" class="hoodie_overlay_button" title="Hoodie"></button>
+                        </form>
                     </div>
                     <div class="trouser_overlay">
-                        <a href="/signup" class="trouser_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Trousers') }}" method="POST">
+                            <button type="submit" class="trousers_overlay_button" title="Trousers"></button>
+                        </form>
                     </div>
                     <div class="shorts_overlay">
-                        <a href="/signup" class="short_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Shorts') }}" method="POST">
+                            <button type="submit" class="shorts_overlay_button" title="Shorts"></button>
+                        </form>
                     </div>
                     <div class="skirt_overlay">
-                        <a href="/signup" class="skirt_overlay_button"></a>
+                        <form action="{{ url_for('items_viewer', clothing_type='Skirt') }}" method="POST">
+                            <button type="submit" class="skirt_overlay_button" title="Skirt"></button>
+                        </form>
                     </div>
-                    <div class="other_overlay">
-                        <a href="/signup" class="other_overlay_button"></a>
+                    <div class="t-shirt_overlay">
+                        <form action="{{ url_for('items_viewer', clothing_type='T-shirt') }}" method="POST">
+                            <button type="submit" class="t-shirt_overlay_button" title="T-shirt"></button>
+                        </form>
                     </div>
                 </div>
                 <div class="photo_upload_container">
@@ -91,4 +134,14 @@
         </div>
     </div>
 </body>
+<script>
+    document.getElementById("close").addEventListener("click",() => {
+        document.querySelector(".image_popup").classList.toggle("hidden");
+    });
+</script>
+<script>
+    document.querySelector('.navbar__burgers').addEventListener('click', () => {
+        document.querySelector('.hamburger_menu_active').classList.toggle('hidden');
+    });
+</script>
 </html>

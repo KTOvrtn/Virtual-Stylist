@@ -6,6 +6,14 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
   }
+
+/* =============================== Popups =============================== */
+
+.popup_messages{
+    justify-content: center;
+    align-items: center;
+}
+
 /* =============================== NavBar =============================== */
 
 .navbar{
@@ -124,7 +132,7 @@
 }
 
 .hidden{
-    display: none;
+    visibility: hidden;
 }
 
 /* =============================== hero section / main page =============================== */
@@ -507,6 +515,7 @@
     margin-top: 9.8%;
     margin-left: 32%;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .jacket_overlay_button:hover{
@@ -526,7 +535,7 @@
     margin-top: 9.8%;
     margin-left: 41.7%;
     transition: all 0.3s ease;
-}
+    border: none;}
 
 .dress_overlay_button:hover{
     background-color: #edf96a;
@@ -545,6 +554,7 @@
     margin-top: 9.8%;
     margin-left: 22.4%;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .hoodie_overlay_button:hover{
@@ -553,7 +563,7 @@
 
 }
 
-.trouser_overlay_button{
+.trousers_overlay_button{
     /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
     height: 16.3%;
     width: 9.8%;
@@ -564,15 +574,16 @@
     margin-top: 25.6%;
     margin-left: 22.4%;
     transition: all 0.3s ease;
+    border: none;
 }
 
-.trouser_overlay_button:hover{
+.trousers_overlay_button:hover{
     background-color: #edf96a;
     opacity: 50%;
 
 }
 
-.short_overlay_button{
+.shorts_overlay_button{
     /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
     height: 8%;
     width: 18.2%;
@@ -583,9 +594,10 @@
     margin-top: 29.6%;
     margin-left: 4.3%;
     transition: all 0.3s ease;
+    border: none;
 }
 
-.short_overlay_button:hover{
+.shorts_overlay_button:hover{
     background-color: #edf96a;
     opacity: 50%;
 
@@ -602,6 +614,7 @@
     margin-top: 27.3%;
     margin-left: 4.3%;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .skirt_overlay_button:hover{
@@ -610,7 +623,7 @@
 
 }
 
-.other_overlay_button{
+.t-shirt_overlay_button{
     /*https://stackoverflow.com/questions/21395662/overlay-div-on-image*/
     height: 37.3%;
     width: 18.2%;
@@ -621,10 +634,53 @@
     margin-top: 9.6%;
     margin-left: 4.3%;
     transition: all 0.3s ease;
+    border: none;
 }
 
-.other_overlay_button:hover{
+.t-shirt_overlay_button:hover{
     background-color: #edf96a;
     opacity: 50%;
 
+}
+#close{
+    cursor: pointer;
+}
+.image_popup{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.inner_image_popup{
+    height: 80vh;
+    width: 70vw;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_popup{
+    display: flex;
+    flex-direction: row;
+    display: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.close{
+    height: 40px;
+    width: 40px;
+}
+
+.images{
+    height: 75%;
+    width: 80%;
+    overflow-y: scroll;
 }

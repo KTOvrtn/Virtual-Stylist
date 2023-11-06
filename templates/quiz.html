@@ -7,15 +7,17 @@
     <title>Quiz</title>
 </head>
 <body class="quiz_body" scroll="no" style="overflow: hidden">
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flash-messages">
-                {% for message in messages %}
-                    <li class="flash-message">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}  
+    <div class="popup_messages">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="flash-message">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}  
+    </div> 
     <div class="container">
         <form class = "quiz_form" method="post" action="/quiz">
             <h1 class = "quiz_header"> Welcome to the style quiz! </h1> 

@@ -14,6 +14,7 @@ import scipy.misc
 import scipy.cluster
 from rembg import remove
 import numpy as np
+import os
 
 
   
@@ -35,23 +36,27 @@ def main_colour_in_image(image):
     index_max = np.argmax(counts)                    
     peak = codes[index_max]
     colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-    if colour == "dffd00":
-        index_max = np.argsort(counts)[-2]
-        peak = codes[index_max]
-        colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
+    if colour == "ddfb00":
+        try:
+            index_max = np.argsort(counts)[-2]
+            peak = codes[index_max]
+            colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
+        except IndexError:
+            color = "ddfb00"
     if len(colour) != 6:
         colour = colour[:6]
     return colour
 
-def remove_background(image): #https://www.geeksforgeeks.org/how-to-remove-the-background-from-an-image-using-python/
+def remove_background(image, number): #https://www.geeksforgeeks.org/how-to-remove-the-background-from-an-image-using-python/
     input = PIL.Image.open(image)
     output = remove(input)
-    return output
+    output.save("static/uploaded_images/temporaryimages/imagewithoutbg.png")
+    output.save(f"static/uploaded_images/{number+1}.png")
 
-def combine_images(image):
+def combine_images():
     # https://www.codespeedy.com/merge-two-images-in-python/
     # https://www.bing.com/search?pglt=41&q=how+to+combine+two+images+in+python&cvid=382a44a6da6e42049e0f637c73ab3c9a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIECAUQADIECAYQADIECAcQADIECAgQANIBCTI4NzU0ajBqMagCALACAA&FORM=ANNTA1&PC=LCTS
     background = PIL.Image.open('static/images/colour_comparison.jpg')
-    foreground = PIL.Image.open(image)
+    foreground = PIL.Image.open("static/uploaded_images/temporaryimages/imagewithoutbg.png")
     background.paste(foreground, (0, 0), foreground)
-    return background
+    background.save("static/uploaded_images/temporaryimages/mergedimage.png")

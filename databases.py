@@ -134,6 +134,14 @@ def get_image_amount():
     connection.close()
     return image_amount[0][0]
 
+def query_images(username, item):
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM images WHERE username=? AND item=?",(username, item))
+    clothes = cursor.fetchall()
+    connection.close()
+    return clothes
+
 
 create_quiz_table()
 create_user_table()

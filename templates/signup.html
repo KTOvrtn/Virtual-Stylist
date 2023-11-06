@@ -7,15 +7,17 @@
     <title>Signup</title>
 </head>
 <body class="signup_body" scroll="no" style="overflow: hidden">
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul class="flash-messages">
-                {% for message in messages %}
-                    <li class="flash-message">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    {% endwith %}  
+    <div class="popup_messages">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for message in messages %}
+                        <li class="flash-message">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}  
+    </div>
     <div class="signup_container">
         <form method="POST" action="" class="signup_form">
             <h1 class="signup_header">Signup</h1>
