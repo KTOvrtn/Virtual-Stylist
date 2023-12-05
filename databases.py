@@ -79,7 +79,7 @@ def create_quiz_table():
 def add_quiz_results(username, answer1, answer2, answer3, answer4, answer5, answer6):
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO quiz (username, answer1, answer2, answer3, answer4, answer5, answer6) VALUES (?, ?, ?, ?, ?, ?, ?)",(username, answer1, answer2, answer3, answer4, answer5, answer6))
+    cursor.execute("INSERT INTO quiz (username, answer1, answer2, answer3, answer4, answer5, answer6) VALUES (?, ?, ?, ?, ?, ?, ?)",(username, answer1, answer2, answer3, answer4, answer5, answer6,))
     connection.commit()
     connection.close()
 
@@ -94,10 +94,11 @@ def get_quiz_results(username):
     else:
         return False
     
-def override_quiz_results(username, answer1, answer2, answer3, answer4, answer5, answer6):
+def delete_quiz_results(username):
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
-    cursor.execute("UPDATE quiz SET answer1=?, answer2=?, answer3=?, answer4=?, answer5=?, answer6=? WHERE username=?",(answer1, answer2, answer3, answer4, answer5, answer6, username))
+    print(username)
+    cursor.execute("DELETE FROM quiz WHERE username=?", (username,))
     connection.commit()
     connection.close()
 

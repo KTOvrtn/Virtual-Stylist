@@ -664,6 +664,10 @@
     align-items: center;
 }
 
+.individual_images{
+    width: 100px;
+}
+
 .top_popup{
     display: flex;
     flex-direction: row;

@@ -11,7 +11,7 @@
         <div class="image_popup">
             <div class="inner_image_popup">
                 <div class="top_popup">
-                    <h1 class="popup_title">placeholder </h1>
+                    <h1 class="popup_title">{{ clothing_type }} </h1>
                     <a id="close"><img src="{{ url_for('static', filename='images/xmark-solid.svg') }}" alt="Logo" class="close"></a>
                 </div>
                 <div class="images">
@@ -118,18 +118,21 @@
                 </div>   
             </div>
             <div class="generate_outfit">
-                <form method="POST" action="" class="prompt_form">
+                <form method="POST" action="{{url_for('generate_outfit')}}" class="prompt_form">
                     <div class="prompt">
                         <label for="prompt" class="prompt_label">Prompt: </label>
                         <input type="text" name="prompt" id="prompt" class="prompt_input">
                     </div>
+                    <div class="outfit_output">
+                        {% for item in outfit %}
+                        <image width="100" src="{{ url_for('static', filename='uploaded_images/' ~ item[0] ~ '.png') }}"> </image>
+                        
+                        {% endfor %}
+                    </div>
+                    <div class="generate_button">
+                        <button type = "submit" class="generate">Generate outfit!</button>
+                    </div>
                 </form>
-                <div class="outfit_output">
-                    <p> test </p>
-                </div>
-                <div class="generate_button">
-                    <a href="/" class="generate">Generate outfit!</a>
-                </div>
             </div>
         </div>
     </div>

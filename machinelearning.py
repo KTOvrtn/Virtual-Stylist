@@ -36,13 +36,13 @@ def main_colour_in_image(image):
     index_max = np.argmax(counts)                    
     peak = codes[index_max]
     colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-    if colour == "ddfb00":
+    if colour == "ddfb00" or colour == "defc00":
         try:
             index_max = np.argsort(counts)[-2]
             peak = codes[index_max]
             colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
         except IndexError:
-            color = "ddfb00"
+            color = "defc00"
     if len(colour) != 6:
         colour = colour[:6]
     return colour
