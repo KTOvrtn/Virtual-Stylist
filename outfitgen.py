@@ -94,7 +94,7 @@ def generating_outfits_without_quizans(username, prompt):
                 Jacket.append(item)
             elif item[2] == "Skirt":
                 Skirt.append(item)
-        if Trousers == [] or Skirt == []:
+        if Jacket == [] or Skirt == []:
             generating_outfits_without_quizans(username,prompt)
         return_Jacket = choice(Jacket)
         return_Skirt = choice(Skirt)
