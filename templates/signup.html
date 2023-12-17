@@ -19,28 +19,33 @@
         {% endwith %}  
     </div>
     <div class="signup_container">
-        <form method="POST" action="" class="signup_form">
-            <h1 class="signup_header">Signup</h1>
-            <div class="signup_input_container">
-                <label for="username" class="signup_label">Username:</label>
-                <input type="text" name="username" id="username" class="signup_input" required>
-            </div>
-             <div class="signup_input_container">
-                <label for="email" class="signup_label">Email:</label>
-                <input type="email" name="email" id="email" class="signup_input" required>
-            </div>
-            <div class="signup_input_container">
-                <label for="password" class="sign_label">Password:</label>
-                <input type="password" name="password" id="password" class="signup_input" required>
-            </div>
-            <div class="signup_input_container">
-                <label for="re-enter_password" class="sign_label">Re-enter password:</label>
-                <input type="password" name="re-enter_password" id="re-enter_password" class="signup_input" required>
-            </div>
-            <div class="signup_input_container">
-                <input type="submit" value="Signup" class="signup_button">
-            </div>
-        </form>
+        <nav class="exit_button">
+            <a href = "/"><img src="{{ url_for('static', filename='images/exit.svg') }}" alt="Exit" class="signup_exit"></a>
+        </nav>
+        <div class="signup_outerform">
+            <form method="POST" action="" class="signup_form">
+                <h1 class="signup_header">Signup</h1>
+                <div class="signup_input_container">
+                    <!-- http://itexpertly.com/how-to-create-a-grayed-out-text-box/ -->
+                    <input type="text" name="username" id="username" class="signup_input" placeholder="Username" required>
+                </div>
+                <div class="signup_input_container">
+                    <input type="email" name="email" id="email" class="signup_input" placeholder="Email" required>
+                </div>
+                <div class="signup_input_container">
+                    <input type="password" name="password" id="password" class="signup_input" placeholder="Password" required>
+                </div>
+                <div class="signup_input_container">
+                    <input type="password" name="re-enter_password" id="re-enter_password" class="signup_input" placeholder="Re-enter password" required>
+                </div>
+                <div class="signup_input_container">
+                    <input type="submit" value="Signup" class="signup_button">
+                </div>
+                <div class="signup_hyperlink">
+                    <a href="/login" class="login_link">Already have an account? Login now!</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <title>Stylista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Stilista</title>
 </head>
 <body>
     <nav class="navbar">
@@ -39,7 +40,24 @@
     </nav>
     <div class="main">
         <div class="hero">
-            <a href="/quiz" class="quiz_button">Take the quiz!</a>
+            <div class="upper_hero">
+                <div class="slogan">
+                    <p class="slogan_paragraph"> Stilista </p> 
+                    <div class="sloganflexrow">
+                        <span class="line1"> </span>
+                        <i class="slogan_cross fa-solid fa-xmark"></i>                        
+                        <span class="line2"> </span>
+                    </div>
+                    <div class="take_quiz_section">
+                        <p class="quiz_paragraph">Make stilista yours</p>
+                        <button class="take_quiz">
+                        </button>
+                    </div>
+                </div>
+                <div class="model_image">
+                    <img src="{{ url_for('static', filename='images/model.jpg') }}" class="model" alt="clothing">
+                </div>
+            </div>
         </div>
         <div class="about_section">
             <div class="about_section_container">
@@ -47,9 +65,9 @@
                 <p class="about_section_explanation">Stilista is a virtual stylist which takes into account your personality and clothing to generate outfits for an occasion. Just take a picture of all your items of clothing, upload them to your own virtual wardrobe, enter a prompt and the rest will be done for you! </p>
             </div>
             <div class="about_section_images">
-                <img src="{{ url_for('static', filename='images/wardrobe.png') }}" class="about_section_image_1" alt="Wardrobe" border="5">
+                <!-- <img src="{{ url_for('static', filename='images/wardrobe.png') }}" class="about_section_image_1" alt="Wardrobe" border="5">
                 <img src="{{ url_for('static', filename='images/folded_clothing.jpg') }}" class="about_section_image_2" alt="clothing" border="5">
-                <img src="{{ url_for('static', filename='images/possible_outfit.jpg') }}" class="about_section_image_3" alt="outfit" border="5">
+                <img src="{{ url_for('static', filename='images/possible_outfit.jpg') }}" class="about_section_image_3" alt="outfit" border="5"> -->
             </div>
         </div>
         <div class="contact_and_legal_section">

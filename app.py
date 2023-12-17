@@ -4,7 +4,7 @@ from machinelearning import combine_images, main_colour_in_image, remove_backgro
 from outfitgen import generating_outfits_without_quizans, generating_outfits_with_quizans
 import os
 
-app = Flask('Stylista')
+app = Flask('Stilista')
 app.secret_key='fhth5gderdchrdgesxeshxesxesxesx'
 
 @app.route('/')

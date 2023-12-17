@@ -19,20 +19,26 @@
         {% endwith %}  
     </div>
     <div class="login_container">
-        <form method="POST" action="" class="login_form">
-            <h1 class="login_header">Login</h1>
-            <div class="login_input_container">
-                <label for="username" class="login_label">Username</label>
-                <input type="text" name="username" id="username" class="login_input">
-            </div>
-            <div class="login_input_container">
-                <label for="password" class="login_label">Password</label>
-                <input type="password" name="password" id="password" class="login_input">
-            </div>
-            <div class="login_input_container">
-                <input type="submit" value="Login" class="login_button">
-            </div>
-        </form>
+        <nav class="exit_button">
+            <a href = "/"><img src="{{ url_for('static', filename='images/exit.svg') }}" alt="Exit" class="login_exit"></a>
+        </nav>
+        <div class="login_outerform">
+            <form method="POST" action="" class="login_form">
+                <h1 class="login_header">Login</h1>
+                <div class="login_input_container">
+                    <input type="text" name="username" id="username" class="login_input" placeholder="Username">
+                </div>
+                <div class="login_input_container">
+                    <input type="password" name="password" id="password" class="login_input" placeholder="Password">
+                </div>
+                <div class="login_input_container">
+                    <input type="submit" value="Login" class="login_button">
+                </div>
+                <div class="login_hyperlink">
+                    <a href="/signup" class="signup_link">Haven't got an account? Sign-up now!</a>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
