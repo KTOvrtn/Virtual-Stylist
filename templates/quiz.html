@@ -21,6 +21,9 @@
     <div class="container">
         <form class = "quiz_form" method="post" action="/quiz">
             <h1 class = "quiz_header"> Welcome to the style quiz! </h1> 
+            <nav class="exit_button">
+                <a href = "/"><img src="{{ url_for('static', filename='images/exit.svg') }}" alt="Exit" class="quiz_exit"></a>
+            </nav>
             <p class = "quiz_explanation" > This quiz will help us get to know you better and provide the stylist with information about you. </p>
             <h2 class = "question_title"> What is your preferred aesthetic? </h2>
             <div class="form-group">

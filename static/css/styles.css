@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Great+Vibes&family=Lobster&display=swap');
 
 *{
     box-sizing: border-box;
@@ -156,6 +157,8 @@
     background-color: #d1cdca;
     text-align: center;
     height: 100vh;
+    border-bottom: 2px #ccc9bb solid;
+    box-shadow: 70px 70px 70px 70px #ccc9bb;
 }
 
 .model_image{
@@ -257,7 +260,7 @@
   }
   
   .take_quiz:hover {
-    box-shadow: .5px .5px 150px #252525;
+    box-shadow: .5px .5px 150px #381607;
   }
   
   .take_quiz::after {
@@ -327,79 +330,91 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    background-image: url(/static/images/about_background.jpg);
-
-    border-top: 4px #dcdef4 solid;
+    background-color: #d1cbc9;
+    border-top: 2px #ccc9bb solid;
+    box-shadow: 0px 0px 70px 70px #ccc9bb;
 }
 
 .about_section_container{
     position: relative;
-    width: 60%;
+    width: 100%;
     margin-top: 15px;
     padding-left: 35px;
     padding-right: 30px;
 }
 
 .about_section_header{
-    font-family: Lobster;
-    font-weight: 800;
-    font-size: 52px;
     text-align: center;
-    color: #2a2e59;
-    margin-bottom: 40px;
-    text-decoration: underline;
+    position: absolute;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 600;
+    font-size: 82px;
+    color: white;
+    text-shadow: #bca697 2px 2px;
+    opacity: 75%;
+    right: 27%;
+    top: 12%;
 }
 
 .about_section_explanation{
     font-weight: 600;
     text-align: left;
-    color: #2a2e59;
+    color: white;
+    text-shadow: #bca697 2px 2px;
+    font-size: 18px;
+    width: 40%;
+    margin-top: 13%;
+    margin-left: 60%;
+    opacity: 75%;
+    font-family: 'Diphylleia', cursive;
 }
 
-/* .about_section_images{
-    width: 50%;
-    margin-top: 25px;
-    padding-left: 70px;
-    padding-right: 40px;
+.span_about{
+    color: #bca697;
+    text-shadow: none;
+    font-family: 'Diphylleia', cursive;
 }
 
-.about_section_image_1{
-    height: 200px;
-    width: 350px;
-    z-index: 1;
-    position: relative;
-    border: 5px white solid;
+.about_section_images{
+    width: 55%;
+    height: 100vh;
+    position: absolute;
+    opacity: 95%;
 }
 
-.about_section_image_2{
-    height: 200px;
-    width: 350px;
-    margin-left: 150px;
+.male_model{
+    height: 525px;
+    width: 700px;
     z-index: 2;
     position: relative;
-    top: -40px;
-    left: -10px;
-    border: 5px white solid;
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom), from(rgba(0,0,0,1)), to(rgba(0,0,0,0));
+    mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0)); 
+    top: 5%;
 }
 
-.about_section_image_3{
-    height: 250px;
-    width: 150px;
-    z-index: 3;
-    position: relative;
-    top: -110px;
-    border: 5px white solid;
+/* .about_model{
+    height: 300px;
+    width: 250px;
+
+    z-index: 1;
+
 } */
 
 .contact_and_legal_section{
-    background: rgb(124,144,163);
-    background: radial-gradient(circle, rgba(124,144,163,1) 15%, rgba(49,77,117,1) 100%);
-    height: 30vh;
+    background-color: #c6bcb3;
+    height: 75vh;
     z-index: 5;
-    border-top: 2px #132537 solid;
-    box-shadow: 0px 0px 5px 5px #132537;
-    padding-left: 25px;
+    border-top: 2px #eadfdc solid;
+    box-shadow: 0px 0px 50px 50px #eadfdc;
     padding-top: 15px;
+    opacity: 75%;
+}
+
+.contact_and_legal_section_header{
+    font-family: 'Diphylleia', cursive;
+    text-align: center;
+    color: #381607;
+    margin-bottom: 2%;
 }
 
 .email{
@@ -415,15 +430,17 @@
 /* =============================== Quiz page =============================== */
 
 .container{
-    background-color: #abdae1;
+    background-color: #c6bcb3;
     height: 100vh;
     align-items: center;
     justify-content: center;
     display: flex;
+    opacity: 75%;
+    
 }
 
 .quiz_form{
-    background-color: #f1f8fb;
+    background-color: #ccc9bb;
     height: 94.5%;
     width: 97.5%;
     border-radius: 9px;
@@ -434,59 +451,79 @@
 
 .quiz_header{
     text-align: center;
-    font-family: Lobster;
+    font-family: 'Great vibes', cursive;
     font-weight: 800;
-    font-size: 52px;
-    color: #9bd3ec;
+    font-size: 62px;
+    color: white;
+    text-shadow: #bca697 2px 2px;
+    top: 0%;
 }
 
 .quiz_explanation{
     margin-top: 5px;
     font-weight: 600;
-    color: #6d6466;
-    margin-bottom: 40px;
+    color: #381607;
+    margin-bottom: 25px;
     text-align: center;
+    font-family: 'Diphylleia', cursive;
 }
 
 .question_title{
-    color:#47545d;
+    color:#381607;
+    font-size: 19px;
+
 }
 
 .form-group{
     padding-bottom: 8.5px;
 }
 .form-control{
-    background-color: #9bd3ec;
+    width: 40%;
+    height: 2em;
+    border-radius: 30px ;
+    background-color: #dedbdd;
+    border: 0px;
+    color: #381607;
+    font-weight: 300;
 }
 
 .quiz_form button{
     width: 6%;
     height: 7%;
-    background-color: #9bd3ec; 
-    color: #063a51;
     margin-left: 47%;
     margin-right: 47%;
-    border: 1px #063a51 solid;
-    border-radius: 7px;
-    font-weight: 500;
-    transition: all 0.4s ease;
+    height: 40px;
+    width: 70px;
+    border-radius: 30px;
+    border: 2px solid #381607;
+    cursor: pointer;
+    background-color: #ccc9bb;
+    transition: all 0.5s ease;
+    color: #381607;
 }
 
 .quiz_form button:hover{
-    border: 1px #9bd3ec solid;
-    background-color: #063a51;
-    color: #9bd3ec;
+    border: 1px #ccc9bb solid;
+    background-color: #381607;
+    color: #ccc9bb;
     transform: scale(1.1);
     
+}
+
+.quiz_exit{
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    top: 8%;
+    left: 3%;
 }
 
 /* =============================== Signup page =============================== */
 
 .signup_container{
-    background-image: url(/static/images/CurvelineRight.svg);
+    background-image: url(/static/images/line.svg);
     height: 100vh;
 }
-
 
 .signup_exit{
     margin-left: 2%;
@@ -498,16 +535,17 @@
 .signup_outerform{
     width: 26vw;
     height: 62vh;
-    border: 4px solid #3378c2;
-    background-color: #0E2A47;
+    border: 4px solid #381607;
+    background-color: #ccc9bb;
     perspective: 800px;
     border-radius: 20px;
     margin-left: 36%;
     margin-top: 4%;
+    opacity: 98%;
 }
 
 .signup_form{
-    background-color: #9bd3ec;
+    background-color: #bca697;
     width: 25vw;
     height: 60vh;
     border-radius: 14px;
@@ -517,8 +555,9 @@
 }
 
 .signup_header{
-    padding-left: 33%;
+    padding-left: 32%;
     padding-top: 5%;
+    color: #381607;
 }
 
 .signup_input_container{
@@ -532,32 +571,33 @@
     width: 95%;
     height: 2em;
     border-radius: 30px ;
-    background-color: #e3e8ff;
+    background-color: #ccc9bb;
     border: 0px;
-    color: #0E2A47;
+    color: #381607;
     font-weight: 300;
     padding-left: 10px;
 }
 
 .signup_button{
-    margin-left: 35%;
+    margin-left: 37%;
+    margin-top: 8%;
     height: 40px;
-    width: 80px;
-    margin-top: 5%;
+    width: 70px;
     border-radius: 30px;
-    border: 2px solid #0E2A47;
+    border: 2px solid #381607;
     cursor: pointer;
-    background-color: #e3e8ff;
+    background-color: #ccc9bb;
     transition: all 0.5s ease;
+    color: #381607;
 }
 
 .signup_button:hover{
-    background-color: #0E2A47;
-    color: #e3e8ff
+    background-color: #381607;
+    color: #ccc9bb
 }
 
 .signup_hyperlink{
-    margin-top: 10%;
+    margin-top: 6%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -565,6 +605,7 @@
 
 .login_link{
     font-size: small;
+    color: #381607;
 }
 
 @media screen and (max-width: 500px){
@@ -656,16 +697,17 @@
 .login_outerform{
     width: 26vw;
     height: 62vh;
-    border: 4px solid #3378c2;
-    background-color: #0E2A47;
+    border: 4px solid #381607;
+    background-color: #ccc9bb;
     perspective: 800px;
     border-radius: 20px;
     margin-left: 36%;
     margin-top: 4%;
+    opacity: 98%;
 }
 
 .login_form{
-    background-color: #9bd3ec;
+    background-color: #bca697;
     width: 25vw;
     height: 60vh;
     border-radius: 14px;
@@ -677,6 +719,7 @@
 .login_header{
     padding-left: 37%;
     padding-top: 5%;
+    color: #381607;
 }
 
 .login_input_container{
@@ -690,9 +733,9 @@
     width: 95%;
     height: 2em;
     border-radius: 30px ;
-    background-color: #e3e8ff;
+    background-color: #ccc9bb;
     border: 0px;
-    color: #0E2A47;
+    color: #381607;
     font-weight: 300;
     padding-left: 10px;
 }
@@ -704,15 +747,16 @@
     width: 70px;
     margin-top: 20%;
     border-radius: 30px;
-    border: 2px solid #0E2A47;
+    border: 2px solid #381607;
     cursor: pointer;
-    background-color: #e3e8ff;
+    background-color: #ccc9bb;
     transition: all 0.5s ease;
+    color: #381607;
 }
 
 .login_button:hover{
-    background-color: #0E2A47;
-    color: #e3e8ff
+    background-color: #381607;
+    color: #ccc9bb
 }
 
 .login_hyperlink{
@@ -724,6 +768,7 @@
 
 .signup_link{
     font-size: small;
+    color: #381607;
 }
 
 @media screen and (max-width: 500px){
