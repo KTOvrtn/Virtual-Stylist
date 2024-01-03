@@ -3,12 +3,18 @@ from databases import *
 from machinelearning import combine_images, main_colour_in_image, remove_background
 from outfitgen import generating_outfits_without_quizans, generating_outfits_with_quizans
 import os
+import pyttsx3
+import threading
+import speech_recognition as sr
 
 app = Flask('Stilista')
 app.secret_key='fhth5gderdchrdgesxeshxesxesxesx'
 
 @app.route('/')
 def index():
+    if "volume" in session:
+        if session["volume"] == True:
+            threading.Thread(target=SpeechOutput, args=("Welcome to Stilista, your personal stylist!",)).start()
     return render_template('index.html')
 
 @app.route('/quiz', methods=['GET', 'POST'])
@@ -132,8 +138,21 @@ def generate_outfit():
             outfit = generating_outfits_without_quizans(username, prompt)
         return render_template("wardrobe.html", outfit = outfit)
 
-            
+@app.route('/toggle_volume/<page>')
+def toggle_volume(page):
+    if "volume" in session:
+        if session["volume"] == True:
+            session["volume"] = False
+        else:
+            session["volume"] = True
+    else:
+        session["volume"] = True
+    return render_template(f"{page}.html")
 
+def SpeechOutput(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
 
 if __name__ == '__main__':
     app.run(debug=True)

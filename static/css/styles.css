@@ -16,6 +16,36 @@
     align-items: center;
 }
 
+/* =============================== Bottom Right =============================== */
+.bottom_right{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.bottom_right_button{
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+}
+
+.bottom_right_button i{
+    left: 0;
+    top: 0;
+    transform: translate(50%, 50%);
+    color: white;
+}
+
 /* =============================== NavBar =============================== */
 
 .navbar{
@@ -414,17 +444,54 @@
     font-family: 'Diphylleia', cursive;
     text-align: center;
     color: #381607;
-    margin-bottom: 2%;
+    margin-bottom: 0.5%;
+}
+
+.contact_paragraph{
+    text-align: center;
+    font-family: 'Diphylleia', cursive;
+    color: #381607;
+    font-weight: 600;
+}
+
+.contact_images{
+    margin-left: 13%;
+    margin-top: 4%;
+    opacity: 75%;
+}
+
+.instagram{
+    height: 220px;
+    width: 220px;
+    font-size: 180px;
+    margin-right: 3%;
+    color: #381607;
+
+}
+
+.twitter{
+    height: 220px;
+    width: 220px;
+    font-size: 180px;
+    margin-right: 3%;
+    color: #381607;
 }
 
 .email{
-    height: 30px;
-    width: 40px;
-    padding-top: 5px;
+    height: 220px;
+    width: 220px;
+    font-size: 180px;
+    margin-right: 3%;
+    color: #381607;
+
 }
 
-.my_email{
-    padding: 8px;
+.facebook{
+    height: 220px;
+    width: 220px;
+    font-size: 180px;
+    color: #381607;
+
 }
 
 /* =============================== Quiz page =============================== */
@@ -517,6 +584,92 @@
     top: 8%;
     left: 3%;
 }
+
+@media screen and (max-width: 1200px) and (min-width: 501px){
+    .quiz_form{
+        height: 98vh;
+    }
+
+    .quiz_header{
+        margin-top: 8%;
+        font-size: 67px;
+    }
+
+    .quiz_exit{
+        height: 3%;
+        width: 3%;
+        left: 6%;
+        top: 6%;
+    }
+
+    .form-control{
+        height: 3rem;
+        width: 85vw;
+        font-size: large;
+        margin-bottom: 3%;
+    }
+
+    .quiz_explanation{
+        font-size: 20px;
+        margin-bottom: 9%;
+    }
+
+    .quiz_form button{
+        margin-top: 1%;
+        height: 8%;
+        width: 20%;
+        margin-left: 40%;
+        font-size: larger;
+    }
+
+    .question_title{
+        margin-bottom: 2px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        height: auto;
+        padding-bottom: 2%;
+    }
+
+    .quiz_form{
+        height: 100vh;
+        overflow-y: auto;
+        margin-top: 2%;
+        width: 98vw;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .quiz_header{
+        font-size: 60px;
+    }
+
+    .quiz_exit{
+        top: 3%;
+        left: 7%;
+        position: absolute;
+    }
+
+    .quiz_explanation{
+        font-size: 15px;
+    }
+
+    .question_title{
+        font-size: 20px;
+    }
+
+    .quiz_form button{
+        margin-bottom: 5%;
+        margin-left: 38%;
+    }
+
+    .form-control{
+        width: 70vw;
+        margin-bottom: 3%;
+    }
+
 
 /* =============================== Signup page =============================== */
 
@@ -1173,4 +1326,5 @@
     .flash-message{
         font-size: large;
     }
+}
 }

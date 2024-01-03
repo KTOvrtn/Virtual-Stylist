@@ -8,6 +8,9 @@
     <title>Stilista</title>
 </head>
 <body>
+    <div class="bottom_right">
+        <a href="/toggle_volume/index" class="bottom_right_button"><i class="fa-solid fa-volume-high"></i></a>
+    </div>
     <nav class="navbar">
         <div class="navbar__columns">
             <a href = "/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="navbar__logo"></a>
@@ -73,14 +76,12 @@
         <div class="contact_and_legal_section">
             <div class="contact_and_legal_section_container">
                 <h1 class="contact_and_legal_section_header">Contacts</h1>
-                <p class="contact_and_legal_section_explanation">If you have any questions or concerns, please email: </p>
-                <div class="email_container">
-                    <div style="float: left">
-                        <img src="{{ url_for('static', filename='images/email.svg') }}" class="email" alt="email">
-                    </div>
-                    <div class="my_email">
-                        17overtonk@student.cleeveschool.net
-                    </div>
+                <p class="contact_paragraph"> In order to get in contact with one of the team, please click on the appropriate icon below: </p>
+                <div class="contact_images">
+                    <i class="instagram fa-brands fa-instagram"></i>
+                    <i class="twitter fa-brands fa-twitter"></i>
+                    <i class="email fa-regular fa-envelope"></i>
+                    <i class="facebook fa-brands fa-facebook"></i>
                 </div>
             </div>
         </div>
