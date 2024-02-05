@@ -32,7 +32,6 @@
 .bottom_right_button{
     width: 40px;
     height: 40px;
-    background-color: red;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -113,18 +112,18 @@
     height: 60px;
     border-radius: 5px;
     background-color: #c6bcb3;
-    color: white;
+    color: #381607;
     font-size: 15px;
     font-weight: 500;
     padding: 5px;
     text-align: center;
     line-height: 30px;
     transition: all 0.3s ease;
-    border: 1px white solid;
+    border: 1px #381607 solid;
 }
 
 .navbar__buttons:hover{
-    background-color: white;
+    background-color: #381607;
     color: #c6bcb3;
 }
 
@@ -133,14 +132,14 @@
     flex-direction: column;
     padding-left: 6px;
     margin-bottom: 5px;
-    color: white;
+    color: #381607;
 }
 
 .navbar__hamburger{
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
+    background-color: #381607;
     margin-bottom: 2px;
 
 }
@@ -148,8 +147,8 @@
 .right_side_popup{
     z-index: 100;
     position: fixed;
-    background-color: #c6bcb3;
-    opacity: 70%;
+    background-color: #381607;
+    opacity: 40%;
     height: 21%;
     width: 18%;
     justify-content: center;
@@ -669,7 +668,7 @@
         width: 70vw;
         margin-bottom: 3%;
     }
-
+}
 
 /* =============================== Signup page =============================== */
 
@@ -999,7 +998,7 @@
 /* =============================== wardrobe page =============================== */
 
 .wardrobe_container{
-    background-color: #b2ccd8;
+    background-color: #d6c7bd;
     height: 92vh;
     align-items: center;
     justify-content: center;
@@ -1007,7 +1006,7 @@
 }
 
 .inner_wardrobe_container{
-    background-color: #d1dadf;
+    background-color: #c6bcb3;
     height: 88vh;
     width: 206vh;
     border-radius: 9px;
@@ -1017,7 +1016,7 @@
 .upload_container{
     width: 60%;
     height: 98%;
-    background-color: #678497;
+    background-color: #b09c86;
     margin-left: 5px;
     margin-top: 5px;
     align-items: center;
@@ -1033,10 +1032,10 @@
     width: 38%;
     margin-top: 0.4%;
     margin-left: 0.8%;
+    padding-top: 5%;
+    padding-left: 4%;
     z-index: 3;
-    background-color: #678497;
-    justify-content: center;
-    align-items: center;
+    background-color: #b09c86;
     display: flex;
     border-radius: 9px;
     flex-direction: column;
@@ -1044,17 +1043,21 @@
 }
 
 .prompt_form{
-    margin-top: 5%;
-    color: #e3e8ff;
+    top: 5%;
+    color: white;
 }
 
 .prompt_input{
-    width: 245px;
+    width: 73%;
+    border-radius: 70px;
+    height: 2rem;
+    border-style: hidden;
+    padding-left: 2%;
 }
 
 .outfit_output{
-    background-color: #d1dadf;
-    height: 70%;
+    background-color: #ccc9bb;
+    height: 50vh;
     width: 90%;
     margin-bottom: 0%;
     margin-top: 5%;
@@ -1075,25 +1078,35 @@
 .photo_upload_container{
     height: 20%;
     width: 95%;
-    background-color: #d1dadf;
+    background-color: #ccc9bb;
     justify-content: center;
     align-items: center;
     display: flex;
     border-radius: 0px,0px,9px,9px;
 }
 
-.generate_button{
-    background-color: #b2ccd8;
-    color: #44487f;
+.generate {
     text-decoration: none;
-    height: 10%;
+    height: 3rem;
     width: 40%;
-    margin: 10%;
-    justify-content: center;
-    align-items: center;
+    margin-top: 7%;
+    margin-left: 25%;
+    padding-left: 8%;
+    padding-top: 3.5%;
     display: flex;
     border-radius: 500px;
     position: relative;
+    text-align: center;
+    border: 2px solid #381607;
+    cursor: pointer;
+    background-color: #ccc9bb;
+    transition: all 0.5s ease;
+    color: #381607;
+}
+
+.generate:hover{
+    background-color: #381607;
+    color: #ccc9bb
 }
 
 .jacket_overlay_button{
@@ -1127,7 +1140,8 @@
     margin-top: 9.8%;
     margin-left: 41.7%;
     transition: all 0.3s ease;
-    border: none;}
+    border: none;
+}
 
 .dress_overlay_button:hover{
     background-color: #edf96a;
@@ -1281,6 +1295,21 @@
     overflow-y: scroll;
 }
 
+@media screen and (max-width: 1200px) and (min-width: 501px){
+    .upload_container{
+        width: 60%;
+        height: 90vh;
+        background-color: #b09c86;
+        margin-top: 5px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 9px;
+    }
+}
+
+
 /* =============================== pop-up messages =============================== */
 
 .flash-messages{
@@ -1326,5 +1355,4 @@
     .flash-message{
         font-size: large;
     }
-}
 }

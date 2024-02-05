@@ -34,6 +34,9 @@ def quiz():
         return redirect(url_for('index'))
     else:
         if "username" in session:
+            if "volume" in session:
+                if session["volume"] == True:
+                    threading.Thread(target=SpeechOutput, args=("Welcome to the quiz, here the website will learn about your style and personality in order to create outfits unique to you.",)).start()
             return render_template('quiz.html')
         else:
             flash("You need to login first!")
@@ -52,6 +55,9 @@ def login():
             session["username"] = username
             return redirect(url_for('index'))
     else:
+        if "volume" in session:
+            if session["volume"] == True:
+                threading.Thread(target=SpeechOutput, args=("You are required to login.",)).start()
         return render_template("login.html")
     
 @app.route('/signup', methods=['GET', 'POST'])#
@@ -76,11 +82,17 @@ def signup():
         add_user(username, email,  password)
         return redirect(url_for('login'))
     else:
+        if "volume" in session:
+            if session["volume"] == True:
+                threading.Thread(target=SpeechOutput, args=("In order to use Stilista you are required to have an account so please signup or if you already have one, login",)).start()
         return render_template("signup.html")
     
 @app.route('/items/<clothing_type>', methods=['GET', 'POST'])
 def items_viewer(clothing_type):
     if "username" in session:
+        if "volume" in session:
+            if session["volume"] == True:
+                threading.Thread(target=SpeechOutput, args=(f"Here are all of your {clothing_type}",)).start()
         items = query_images(session["username"], clothing_type)
         listofnumbers = []
         for item in items:
@@ -98,6 +110,9 @@ def items_viewer(clothing_type):
 @app.route('/wardrobe' , methods=['GET', 'POST'])
 def wardrobe():
     if "username" in session:
+        if "volume" in session:
+            if session["volume"] == True:
+                threading.Thread(target=SpeechOutput, args=("Welcome to your virtual wardrobe, here you will be able to upload all your items of clothing in order for Stilista to generate outfits. ",)).start()
         return render_template("wardrobe.html", show_popup = False)
     else:
         flash("You need to login first!")
@@ -119,6 +134,9 @@ def upload_file():
         colour = main_colour_in_image("static/uploaded_images/temporaryimages/mergedimage.png")
         add_image(session["username"], clothing_type, colour)
     flash("Upload Success")
+    if "volume" in session:
+            if session["volume"] == True:
+                threading.Thread(target=SpeechOutput, args=("Upload successful.",)).start()
     return render_template('wardrobe.html')
 
 @app.route('/generate_outfit', methods=['GET','POST'])
@@ -150,9 +168,13 @@ def toggle_volume(page):
     return render_template(f"{page}.html")
 
 def SpeechOutput(text):
-    engine = pyttsx3.init()
+    engine = pyttsx3.init('sapi5')
+    voices = engine.getProperty('voices')
+    engine.setProperty('voices', voices[0].id)
+    engine.setProperty('rate', 180)
     engine.say(text)
     engine.runAndWait()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
