@@ -19,7 +19,10 @@
                         <p>No items were found in the database</p>
                     {% else %}
                         {% for item in items %}
-                        <img class="individual_images" src="{{ url_for('static', filename='uploaded_images/'+ item+'.png')}}">
+                        <div class="image_and_delete_button">
+                            <img class="individual_images" src="{{ url_for('static', filename='uploaded_images/'+ item+'.png')}}">
+                            <a class="delete_button" href="/delete_item/{{item}}"><img src="{{ url_for('static', filename='images/delete.svg') }}" alt="delete" class="delete"></a>
+                        </div>
                         {% endfor %}
                     {% endif %}
                 </div>

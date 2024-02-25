@@ -94,14 +94,29 @@ def items_viewer(clothing_type):
             if session["volume"] == True:
                 threading.Thread(target=SpeechOutput, args=(f"Here are all of your {clothing_type}",)).start()
         items = query_images(session["username"], clothing_type)
-        listofnumbers = []
+        listofitems = []
         for item in items:
-            listofnumbers.append(str(item[0]))
+            listofitems.append(str(item[0]))
 
         if items != "[]":
-            return render_template("wardrobe.html", items=listofnumbers, show_popup = True, clothing_type = clothing_type)
+            return render_template("wardrobe.html", items=listofitems, show_popup = True, clothing_type = clothing_type)
         else:
             return render_template("wardrobe.html", items="No items found", show_popup = False, clothing_type = clothing_type)
+    else:
+        flash("You need to login first!")
+        return redirect(url_for('login'))
+    
+@app.route('/delete_item/<image_id>', methods=['GET', 'POST'])
+def delete_item(image_id):
+    if "username" in session:
+        username = session["username"]
+        if username_imageid_sync(image_id, username) == False:
+            flash("You are not allowed to delete this item")
+            return redirect(url_for('wardrobe'))
+        else:
+            delete_image(image_id)
+            flash("Item deleted")
+            return redirect(url_for('wardrobe'))
     else:
         flash("You need to login first!")
         return redirect(url_for('login'))

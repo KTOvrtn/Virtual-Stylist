@@ -68,7 +68,6 @@ def check_password(password):
         return ("Your password must contain a symbol!")
     return True
 
-
 def create_quiz_table():
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
@@ -143,6 +142,23 @@ def query_images(username, item):
     connection.close()
     return clothes
 
+def username_imageid_sync(image_id, username):
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM images WHERE username=? AND image_id=?", (username, image_id))
+    image = cursor.fetchall()
+    connection.close()
+    if image:
+        return True
+    else:
+        return False
+
+def delete_image(image_id):
+    connection = sqlite3.connect("database.db")
+    cursor = connection.cursor()
+    cursor.execute("DELETE FROM images WHERE image_id=?", (image_id,))
+    connection.commit()
+    connection.close()
 
 create_quiz_table()
 create_user_table()
