@@ -126,13 +126,16 @@ def get_images(username):
     else:
         return False
 
-def get_image_amount():
+def get_most_recent_image():
     connection = sqlite3.connect("database.db")
     cursor = connection.cursor()
-    cursor.execute("SELECT COUNT(*) FROM images")
-    image_amount = cursor.fetchall()
+    cursor.execute("SELECT image_id FROM images ORDER BY image_id DESC LIMIT 1")
+    image = cursor.fetchone()
     connection.close()
-    return image_amount[0][0]
+    if image:
+        return image[0]
+    else:
+        return False
 
 def query_images(username, item):
     connection = sqlite3.connect("database.db")

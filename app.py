@@ -141,7 +141,7 @@ def upload_file():
         if image.filename.split(".")[-1] not in accepted_extensions:
             flash("This file format is not supported, please try again!")
             return render_template("wardrobe.html")
-        itemnumber = get_image_amount()
+        itemnumber = get_most_recent_image()
         remove_background(image, itemnumber)
         combine_images()
         colour = main_colour_in_image("static/uploaded_images/temporaryimages/mergedimage.png")
