@@ -111,11 +111,9 @@ def delete_item(image_id):
     if "username" in session:
         username = session["username"]
         if username_imageid_sync(image_id, username) == False:
-            flash("You are not allowed to delete this item")
             return redirect(url_for('wardrobe'))
         else:
             delete_image(image_id)
-            flash("Item deleted")
             return redirect(url_for('wardrobe'))
     else:
         flash("You need to login first!")
