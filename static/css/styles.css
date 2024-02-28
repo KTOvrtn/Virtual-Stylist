@@ -1336,43 +1336,120 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 501px){
-    .upload_container{
-        width: 94vh;
-        height: 80vw;
-        background-color: #b09c86;
-        margin-top: 5px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        border-radius: 9px;
-    }
-
-    .wardrobe{
-        height: 70vh;
-        width: 90vw;
-        border-radius: 9px,9px,0px,0px;
+    .wardrobe_container{
+        flex-direction: row;
     }
 
     .inner_wardrobe_container{
-        background-color: #c6bcb3;
-        height: 90vh;
-        width: 96vh;
-        border-radius: 9px;
-        display: flex;
         flex-direction: row;
         position: absolute;
-        padding-left: 0.25%;
+        left: 1px;
+        width: 98vw;
     }
 
-    
+    .generate_outfit{
+        margin-top: 920px;
+        position: absolute;
+        width: 100vw;
+        margin-left: -5px;
+        justify-content: center;
+        padding-right: 20px;
+    }
+
+    .upload_container{
+        width: 96vw;
+    }
+
+    .generate{
+        font-size: x-large;
+        height: 5rem;
+        margin-left: 210px;
+    }
+
+    .outfit_output{
+        width: 710px;
+        display: flex;
+    }
+
+    .prompt_input{
+        width: 600px;
+    }
+
+    .generated_outfits{
+        justify-self: center;
+        align-self: center;
+        margin-left: 100px;
+        height: 270px;
+        width: 200px;
+        
+    }
+}
+
+@media screen and (max-width: 500px){
     .wardrobe_container{
-        background-color: #d6c7bd;
-        height: 98vh;
-        margin-top: 1px;
+        flex-direction: row;
     }
 
-    
+    .inner_wardrobe_container{
+        flex-direction: row;
+        position: absolute;
+        left: 1px;
+        width: 98vw;
+    }
+
+    .generate_outfit{
+        margin-top: 600px;
+        position: absolute;
+        width: 100vw;
+        margin-left: -5px;
+        justify-content: center;
+        padding-right: 5px;
+    }
+
+    .upload_container{
+        width: 96vw;
+    }
+
+    .generate{
+        font-size: medium;
+        height: 3rem;
+        margin-left: 29%;
+        padding-left: 13px;
+    }
+
+    .outfit_output{
+        width: 98%;
+        display: flex;
+    }
+
+    .prompt_input{
+        width: 80%;
+    }
+
+    .generated_outfits{
+        justify-self: center;
+        align-self: center;
+        margin-left: 39px;
+        height: 150px;
+        width: 120px;
+    }
+
+    .photo_upload_container{
+        padding-left: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__buttons{
+        width: 50px;
+        height: 100px;
+        font-size: 13px;
+        padding: 3px;
+        padding-left: 2px;
+        padding-right: 2px;
+        margin: 0px;
+    }
 }
 
 

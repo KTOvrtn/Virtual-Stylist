@@ -128,7 +128,7 @@
                     </div>
                     <div class="outfit_output">
                         {% for item in outfit %}
-                        <image width="100" src="{{ url_for('static', filename='uploaded_images/' ~ item[0] ~ '.png') }}"> </image>
+                        <image class="generated_outfits" width="100" src="{{ url_for('static', filename='uploaded_images/' ~ item[0] ~ '.png') }}"> </image>
                         
                         {% endfor %}
                     </div>
