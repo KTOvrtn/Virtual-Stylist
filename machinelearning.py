@@ -16,13 +16,18 @@ from rembg import remove
 import numpy as np
 import os
 
-
-  
-
 def main_colour_in_image(image):
     NUM_CLUSTERS = 5
-    im = PIL.Image.open(image)
-    im = im.resize((150, 150))      
+    img = PIL.Image.open(image)
+    frac = 0.5
+
+    left = img.size[0]*((1-frac)/2)
+    upper = img.size[1]*((1-frac)/2)
+    right = img.size[0]-((1-frac)/2)*img.size[0]
+    bottom = img.size[1]-((1-frac)/2)*img.size[1]
+    cropped_img = img.crop((left, upper, right, bottom))
+
+    im = cropped_img.resize((300,300))      
     ar = np.asarray(im)
     shape = ar.shape
     ar = ar.reshape(np.product(shape[:2]), shape[2]).astype(float)
@@ -36,13 +41,17 @@ def main_colour_in_image(image):
     index_max = np.argmax(counts)                    
     peak = codes[index_max]
     colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
-    if colour == "ddfb00" or colour == "defc00":
+    valuecheck = 0
+    while colour == "defc00" or colour == "ddfb00" or colour == "defb01":
         try:
-            index_max = np.argsort(counts)[-2]
+            index_max = np.argsort(counts)[-valuecheck]
             peak = codes[index_max]
             colour = binascii.hexlify(bytearray(int(c) for c in peak)).decode('ascii')
+            valuecheck += 1
         except IndexError:
             color = "defc00"
+            break
+
     if len(colour) != 6:
         colour = colour[:6]
     return colour
@@ -58,5 +67,7 @@ def combine_images():
     # https://www.bing.com/search?pglt=41&q=how+to+combine+two+images+in+python&cvid=382a44a6da6e42049e0f637c73ab3c9a&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIECAEQADIECAIQADIECAMQADIECAQQADIECAUQADIECAYQADIECAcQADIECAgQANIBCTI4NzU0ajBqMagCALACAA&FORM=ANNTA1&PC=LCTS
     background = PIL.Image.open('static/images/colour_comparison.jpg')
     foreground = PIL.Image.open("static/uploaded_images/temporaryimages/imagewithoutbg.png")
-    background.paste(foreground, (0, 0), foreground)
+    dimensions = (2880, 1800)
+    newImage = foreground.resize(dimensions)
+    background.paste(newImage, (0, 0), newImage)
     background.save("static/uploaded_images/temporaryimages/mergedimage.png")

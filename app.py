@@ -158,6 +158,8 @@ def generate_outfit():
         username = session["username"]
         quiz_results = get_quiz_results(username)
         prompt = request.form["prompt"]
+        if quiz_results == False:
+            outfit = generating_outfits_without_quizans(username, prompt)
         check_last_question = quiz_results[0][6]
         if check_last_question == "Yes":
             check_bodytype = quiz_results[0][2]
